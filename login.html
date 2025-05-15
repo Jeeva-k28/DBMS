@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('images/login-background.JPG');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 900px;
+            overflow: hidden;
+        }
+        .image-section {
+            flex: 1;
+            background-image: url('images/login-main.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .login-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .module-switch {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-bottom: 15px;
+        }
+        .module-switch button {
+            width: 48%;
+            padding: 10px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .module-switch button.active {
+            background-color: navy;
+            color: white;
+        }
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .login-form {
+            width: 100%;
+            text-align: center;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .forgot-password {
+            display: block;
+            margin: 15px 0 20px;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: navy;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .login-form button:hover {
+            background-color: #003366;
+        }
+        .social-login {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .social-login a {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 16px;
+            color: black;
+        }
+        .social-login img {
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+        }
+    </style>
+    <script>
+        function switchModule(module) {
+            document.getElementById("module-display").textContent = module + " Login";
+            document.getElementById("teacher-btn").classList.remove("active");
+            document.getElementById("admin-btn").classList.remove("active");
+            document.getElementById(module.toLowerCase() + "-btn").classList.add("active");
+        }
+
+        function redirectToDashboard() {
+            var module = document.getElementById("module-display").textContent;
+            if (module.includes("Admin")) {
+                window.location.href = "admin_home.html"; // Redirects Admin to admin home page
+            } else if (module.includes("Teacher")) {
+                window.location.href = "teacher_home.html";  //Redirect Teacher to teacher home page
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="image-section"></div>
+        <div class="login-section">
+            <div class="module-switch">
+                <button id="admin-btn" class="active" onclick="switchModule('Admin')">Admin</button>
+                <button id="teacher-btn" onclick="switchModule('Teacher')">Teacher</button>
+            </div>
+            <h2 id="module-display">Admin Login</h2>
+            <p>Welcome back! Please enter your details</p>
+            <form class="login-form" onsubmit="redirectToDashboard(); return false;">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <button type="submit">Log in</button>
+            </form>
+            <div class="social-login">
+                <p>Or Continue With</p>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google"> Google</a>
+            </div>
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>  </div>
+    </div>
+    <script src="login-script.js"></script>
+</body>
+</html>

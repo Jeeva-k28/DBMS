@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Home Page</title>
+    <link rel="stylesheet" href="teacher_styles.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="header">
+        <div class="teacher-section">
+            <img src="images/teacher-logo.png" alt="Teacher Logo">
+            <h2>Teacher</h2>
+        </div>
+        <div class="navbar">
+            <a href="#" id="home-link" onclick="setActive('home-link')">Home</a>
+            <a href="#" id="class-management-link" onclick="setActive('class-management-link')">Class Management</a>
+            <a href="#" id="attendance-link" onclick="setActive('attendance-link')">Take Attendance</a>
+            <a href="#" id="report-link" onclick="setActive('report-link')">Report</a>
+            <a href="#" id="logout-link" onclick="logout()">Logout</a>
+        </div>
+    </div>
+    <div class="welcome-section">
+        <span class="welcome">Welcome</span>
+        <span class="teacher">Teacher ...!</span>
+    </div>
+
+    <script>
+        function setActive(moduleId) {
+            let modules = document.querySelectorAll(".navbar a");
+            modules.forEach(module => module.classList.remove("active"));
+            document.getElementById(moduleId).classList.add("active");
+
+            if (moduleId === "home-link") {
+                document.querySelector(".background").style.backgroundImage = "url('images/teacherhome-background.jpg')";
+                document.querySelector(".welcome-section").style.display = "flex";
+            } else if (moduleId !== "logout-link") {
+                document.querySelector(".background").style.backgroundImage = "url('images/other-modules-background.jpg')";
+                document.querySelector(".welcome-section").style.display = "none";
+            }
+        }
+
+        function logout() {
+            sessionStorage.removeItem("loggedIn");
+            window.location.href = "login.html"; // Redirect to login page
+        }
+
+        window.onload = function() {
+            setActive("home-link"); // Home module selected by default
+        };
+    </script>
+</body>
+</html>
