@@ -1,0 +1,291 @@
+/* Custom Topbar Styles */
+.topbar {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05) !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  height: 60px;
+  padding: 0;
+}
+
+.navbar {
+  min-height: 60px;
+  padding: 0.5rem 1rem;
+}
+
+.topbar .navbar-search .form-control {
+  font-size: 0.875rem;
+  border-radius: 20px;
+  padding: 0.75rem 1rem;
+  background-color: #f8f9fc !important;
+  transition: all 0.2s ease;
+}
+
+.topbar .navbar-search .form-control:focus {
+  background-color: #fff !important;
+  box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.1);
+}
+
+.topbar .navbar-search .input-group-append button {
+  border-radius: 0 20px 20px 0;
+}
+
+.topbar .navbar-nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 1rem;
+}
+
+.topbar .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.topbar .nav-item .nav-link {
+  padding: 0 0.75rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.topbar .nav-item .nav-link:hover {
+  color: #e0e0e0;
+}
+
+.topbar .nav-item .badge-counter {
+  position: absolute;
+  transform: scale(0.85);
+  transform-origin: top right;
+  right: 0.25rem;
+  top: 0.25rem;
+}
+
+/* Profile image styling */
+.img-profile {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #ffffff;
+}
+
+/* Notification badge styling */
+.badge-counter {
+  position: absolute;
+  transform: scale(0.85);
+  transform-origin: top right;
+  right: 0.25rem;
+  top: 0.25rem;
+}
+
+/* Alerts dropdown styling */
+.dropdown-list {
+  width: 320px !important;
+  padding: 0;
+  margin: 0.5rem 0;
+  right: 0;
+}
+
+.dropdown-header {
+  background-color: #4e73df;
+  border-bottom: 1px solid #4e73df;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.65rem;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+/* Divider styling */
+.topbar-divider {
+  width: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  height: 2rem;
+  margin: 0 1rem;
+}
+
+.dropdown-menu {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+/* Card styling */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #ffffff;
+  background-clip: border-box;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #f8f9fc;
+  border-bottom: 1px solid #e3e6f0;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+/* Text styling */
+.text-xs {
+  font-size: 0.7rem;
+}
+
+.text-gray-800 {
+  color: #5a5c69 !important;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.text-primary {
+  color: #4e73df !important;
+}
+
+.text-success {
+  color: #1cc88a !important;
+}
+
+.text-info {
+  color: #36b9cc !important;
+}
+
+.text-warning {
+  color: #f6c23e !important;
+}
+
+/* Badge styling */
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.35rem;
+}
+
+.badge-success {
+  color: #fff;
+  background-color: #1cc88a;
+}
+
+.badge-danger {
+  color: #fff;
+  background-color: #e74a3b;
+}
+
+/* Chart area styling */
+.chart-area {
+  position: relative;
+  height: 10rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .chart-area {
+    height: 20rem;
+  }
+}
+
+/* Table styling */
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-flush td, .table-flush th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #e3e6f0;
+}
+
+.thead-light th {
+  color: #6e707e;
+  background-color: #f8f9fc;
+  border-color: #e3e6f0;
+}
+
+/* Background and text color styling */
+.bg-primary {
+  background-color: #4e73df !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+/* Adding blue background for student area */
+body {
+  background-color: #e8f0ff !important;
+}
+
+#wrapper #content-wrapper {
+  background-color: #e8f0ff !important;
+}
+
+.navbar, .bg-navbar {
+  background: linear-gradient(87deg, #2196f3 0, #1976d2 100%) !important;
+}
+
+/* Sidebar brand styling */
+.sidebar-brand {
+  height: 4.375rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background-color: #4e73df; /* Blue background */
+}
+
+.sidebar-brand .sidebar-brand-text {
+  color: #ffffff; /* White text */
+  font-weight: bold;
+}
+
+.sidebar-brand a {
+  color: #ffffff; /* White text for any links */
+  text-decoration: none;
+}
+
+.sidebar .sidebar-brand {
+  background-color: #4e73df;
+}
+
+.sidebar .sidebar-brand .sidebar-brand-text {
+  color: #ffffff !important;
+  font-weight: 700;
+}
